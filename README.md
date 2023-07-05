@@ -16,3 +16,7 @@ Column<br>
 -El tamaño de columna es el tamaño de sus hijos<br>
 -weight -> peso que se coge para pintar en pantalla<br>
 -verticalArrangement -> podemos definir como comportarse los hijos en su separacion<br>
+
+Row<br>
+-Como un linearLayout en posicion horizontal<br>
+-Tiene los mismo atributos q Column

@@ -4,9 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -34,7 +36,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MyColumn()
+                    MyRow()
                 }
             }
         }
@@ -42,32 +44,49 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MyColumn(){
+fun MyRow() {
+    Row(
+        modifier = Modifier
+            .fillMaxSize()
+            .horizontalScroll(rememberScrollState()),
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        Text("Ejemplo 1", modifier = Modifier.background(Color.Red).width(100.dp))
+        Text("Ejemplo 2", modifier = Modifier.background(Color.Black).width(100.dp))
+        Text("Ejemplo 3", modifier = Modifier.background(Color.Cyan).width(100.dp))
+
+        Text("Ejemplo 1", modifier = Modifier.background(Color.Red).width(100.dp))
+        Text("Ejemplo 2", modifier = Modifier.background(Color.Black).width(100.dp))
+        Text("Ejemplo 3", modifier = Modifier.background(Color.Cyan).width(100.dp))
+    }
+}
+
+@Composable
+fun MyColumn() {
     Column(
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.SpaceBetween
     ) {
-        Text("Ejemplo 1", modifier = Modifier.background(Color.Red).fillMaxWidth().height(100.dp))
-        Text("Ejemplo 2", modifier = Modifier.background(Color.Black).fillMaxWidth().height(100.dp))
-        Text("Ejemplo 3", modifier = Modifier.background(Color.Cyan).fillMaxWidth().height(100.dp))
-        Text("Ejemplo 4", modifier = Modifier.background(Color.Blue).fillMaxWidth().height(100.dp))
-
-        Text("Ejemplo 1", modifier = Modifier.background(Color.Red).fillMaxWidth().height(100.dp))
-        Text("Ejemplo 2", modifier = Modifier.background(Color.Black).fillMaxWidth().height(100.dp))
-        Text("Ejemplo 3", modifier = Modifier.background(Color.Cyan).fillMaxWidth().height(100.dp))
-        Text("Ejemplo 4", modifier = Modifier.background(Color.Blue).fillMaxWidth().height(100.dp))
-
-        Text("Ejemplo 1", modifier = Modifier.background(Color.Red).fillMaxWidth().height(100.dp))
-        Text("Ejemplo 2", modifier = Modifier.background(Color.Black).fillMaxWidth().height(100.dp))
-        Text("Ejemplo 3", modifier = Modifier.background(Color.Cyan).fillMaxWidth().height(100.dp))
-        Text("Ejemplo 4", modifier = Modifier.background(Color.Blue).fillMaxWidth().height(100.dp))
-
-        Text("Ejemplo 1", modifier = Modifier.background(Color.Red).fillMaxWidth().height(100.dp))
-        Text("Ejemplo 2", modifier = Modifier.background(Color.Black).fillMaxWidth().height(100.dp))
-        Text("Ejemplo 3", modifier = Modifier.background(Color.Cyan).fillMaxWidth().height(100.dp))
-        Text("Ejemplo 4", modifier = Modifier.background(Color.Blue).fillMaxWidth().height(100.dp))
+        Text(
+            "Ejemplo 1", modifier = Modifier
+                .background(Color.Red)
+                .fillMaxWidth()
+                .height(100.dp)
+        )
+        Text(
+            "Ejemplo 2", modifier = Modifier
+                .background(Color.Black)
+                .fillMaxWidth()
+                .height(100.dp)
+        )
+        Text(
+            "Ejemplo 3", modifier = Modifier
+                .background(Color.Cyan)
+                .fillMaxWidth()
+                .height(100.dp)
+        )
     }
 }
 
@@ -96,6 +115,6 @@ fun MyBox() {
 @Composable
 fun DefaultPreview() {
     JetpackComposeCatalogoTheme {
-        MyColumn()
+        MyRow()
     }
 }
