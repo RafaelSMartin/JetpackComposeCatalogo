@@ -10,3 +10,9 @@ Box<br>
 
 Text<br>
 -verticalScroll -> si el texto no cabe para que haga scroll, lleva rememberScrollState()
+
+Column<br>
+-Como un linearLayout en posicion vertical<br>
+-El tamaño de columna es el tamaño de sus hijos<br>
+-weight -> peso que se coge para pintar en pantalla<br>
+-verticalArrangement -> podemos definir como comportarse los hijos en su separacion<br>

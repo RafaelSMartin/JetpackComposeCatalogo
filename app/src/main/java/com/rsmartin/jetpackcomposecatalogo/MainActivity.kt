@@ -4,8 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
@@ -31,10 +34,40 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MyBox()
+                    MyColumn()
                 }
             }
         }
+    }
+}
+
+@Composable
+fun MyColumn(){
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState()),
+        verticalArrangement = Arrangement.SpaceBetween
+    ) {
+        Text("Ejemplo 1", modifier = Modifier.background(Color.Red).fillMaxWidth().height(100.dp))
+        Text("Ejemplo 2", modifier = Modifier.background(Color.Black).fillMaxWidth().height(100.dp))
+        Text("Ejemplo 3", modifier = Modifier.background(Color.Cyan).fillMaxWidth().height(100.dp))
+        Text("Ejemplo 4", modifier = Modifier.background(Color.Blue).fillMaxWidth().height(100.dp))
+
+        Text("Ejemplo 1", modifier = Modifier.background(Color.Red).fillMaxWidth().height(100.dp))
+        Text("Ejemplo 2", modifier = Modifier.background(Color.Black).fillMaxWidth().height(100.dp))
+        Text("Ejemplo 3", modifier = Modifier.background(Color.Cyan).fillMaxWidth().height(100.dp))
+        Text("Ejemplo 4", modifier = Modifier.background(Color.Blue).fillMaxWidth().height(100.dp))
+
+        Text("Ejemplo 1", modifier = Modifier.background(Color.Red).fillMaxWidth().height(100.dp))
+        Text("Ejemplo 2", modifier = Modifier.background(Color.Black).fillMaxWidth().height(100.dp))
+        Text("Ejemplo 3", modifier = Modifier.background(Color.Cyan).fillMaxWidth().height(100.dp))
+        Text("Ejemplo 4", modifier = Modifier.background(Color.Blue).fillMaxWidth().height(100.dp))
+
+        Text("Ejemplo 1", modifier = Modifier.background(Color.Red).fillMaxWidth().height(100.dp))
+        Text("Ejemplo 2", modifier = Modifier.background(Color.Black).fillMaxWidth().height(100.dp))
+        Text("Ejemplo 3", modifier = Modifier.background(Color.Cyan).fillMaxWidth().height(100.dp))
+        Text("Ejemplo 4", modifier = Modifier.background(Color.Blue).fillMaxWidth().height(100.dp))
     }
 }
 
@@ -61,8 +94,8 @@ fun MyBox() {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun DefaultPreview() {
     JetpackComposeCatalogoTheme {
-        MyBox()
+        MyColumn()
     }
 }
