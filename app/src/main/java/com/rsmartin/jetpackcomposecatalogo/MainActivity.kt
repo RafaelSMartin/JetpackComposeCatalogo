@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -46,6 +47,11 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
+fun MySpacer(size: Int) {
+    Spacer(modifier = Modifier.height(size.dp))
+}
+
+@Composable
 fun MySampleComplexLayout() {
     Column(Modifier.fillMaxSize()) {
         Box(modifier = Modifier
@@ -56,9 +62,11 @@ fun MySampleComplexLayout() {
         ){
             Text(text = "Ejemplo 1")
         }
-
-        Row(Modifier.fillMaxWidth()
-            .weight(1f)
+        MySpacer(30)
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .weight(1f)
         ){
             Box(modifier = Modifier
                 .fillMaxHeight()
@@ -77,7 +85,7 @@ fun MySampleComplexLayout() {
                 Text(text = "Ejemplo 3")
             }
         }
-
+        MySpacer(80)
         Box(modifier = Modifier
             .fillMaxWidth()
             .background(Color.Magenta)

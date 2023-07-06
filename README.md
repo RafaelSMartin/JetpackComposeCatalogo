@@ -20,3 +20,6 @@ Column<br>
 Row<br>
 -Como un linearLayout en posicion horizontal<br>
 -Tiene los mismo atributos q Column
+
+Spacer<br>
+-Se suele usar a modo de layout al no tener margenes en compose
