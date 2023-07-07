@@ -23,3 +23,10 @@ Row<br>
 
 Spacer<br>
 -Se suele usar a modo de layout al no tener margenes en compose
+
+ConstraintLayout<br>
+-createRefs -> crea los id para poder referenciar los elementos composables<br>
+-constrainAs & linkTo -> engancha los constraints, admiten margenes<br>
+-createGuideline -> crea una linea invisible para poder engancharme<br>
+-createBarrier -> crea una barrera referenciando elementos<br>
+-createChain -> union de elementos<br>
