@@ -30,3 +30,12 @@ ConstraintLayout<br>
 -createGuideline -> crea una linea invisible para poder engancharme<br>
 -createBarrier -> crea una barrera referenciando elementos<br>
 -createChain -> union de elementos<br>
+
+
+Estados<br>
+-mutableStateOf -> asi se declaran variables en compose<br>
+-remember -> debido al recomposicion de vistas es necesario para no perder valores de las variables<br>
+-.value -> para acceder al valor de la variable para leer o escribirla.<br>
+-Ejemplo -> val counter = remember { mutableStateOf(0) } // counter.value += 1 // aunque no nos guarda si se rota pantalla por el ciclo de vida<br>
+-rememberSaveable -> mantiene el estado aunque la vista se destruya.
+-by -> para evitar usar .value //var counter by rememberSaveable { mutableStateOf(0) } // counter += 1
