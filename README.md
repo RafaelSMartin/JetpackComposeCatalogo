@@ -39,3 +39,9 @@ Estados<br>
 -Ejemplo -> val counter = remember { mutableStateOf(0) } // counter.value += 1 // aunque no nos guarda si se rota pantalla por el ciclo de vida<br>
 -rememberSaveable -> mantiene el estado aunque la vista se destruya.
 -by -> para evitar usar .value //var counter by rememberSaveable { mutableStateOf(0) } // counter += 1
+
+Text, TextField y OutlinedTextField<br>
+
+State Hoisting<br>
+-Elevar el estado al principal común más bajo entre todos lo elementos componibles.
+
