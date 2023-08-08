@@ -45,3 +45,10 @@ Text, TextField y OutlinedTextField<br>
 State Hoisting<br>
 -Elevar el estado al principal común más bajo entre todos lo elementos componibles.
 
+Button y OutlinedButton<br>
+
+Image y Icon<br>
+implementation "androidx.compose.material:material-icons-extended:$compose_version"
+https://fonts.google.com/icons
+
+ProgressBar<br>
