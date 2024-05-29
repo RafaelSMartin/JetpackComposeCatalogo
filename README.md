@@ -52,3 +52,5 @@ implementation "androidx.compose.material:material-icons-extended:$compose_versi
 https://fonts.google.com/icons
 
 ProgressBar<br>
+
+Switch, CheckBox, RadioButton<br>
