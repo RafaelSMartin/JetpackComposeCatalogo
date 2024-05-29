@@ -7,11 +7,14 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.CheckboxDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.RadioButton
+import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
@@ -45,6 +48,9 @@ class SelectionControlComponentExampleActivity : ComponentActivity() {
                         listOf("Aris", "Ejemplo", "Pikachu")
                     )
 
+                    var selected by rememberSaveable { mutableStateOf("Aris") }
+
+
                     Column {
                         MySwitch()
                         MyCheckBox()
@@ -53,6 +59,8 @@ class SelectionControlComponentExampleActivity : ComponentActivity() {
                             MyCheckBoxWithTextCompleted(it)
                         }
                         MyTriStatusCheckBox()
+                        MyRadioButton()
+                        MyRadioButtonList(selected) { selected = it }
                     }
                 }
             }
@@ -61,8 +69,48 @@ class SelectionControlComponentExampleActivity : ComponentActivity() {
 }
 
 @Composable
-fun myRadioButton() {
+fun MyRadioButtonList(name: String, onItemSelected: (String) -> Unit) {
 
+    Column(Modifier.fillMaxWidth()) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            RadioButton(selected = name == "Aris", onClick = { onItemSelected("Aris") })
+            Text(text = "Aris")
+        }
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            RadioButton(selected = name == "David", onClick = { onItemSelected("David") })
+            Text(text = "David")
+        }
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            RadioButton(selected = name == "Fulanito", onClick = { onItemSelected("Fulanito") })
+            Text(text = "Fulanito")
+        }
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            RadioButton(selected = name == "Pepe", onClick = { onItemSelected("Pepe") })
+            Text(text = "Pepe")
+        }
+    }
+}
+
+@Composable
+fun MyRadioButton() {
+    Row(
+        Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        RadioButton(
+            selected = false,
+            onClick = { },
+            enabled = false,
+            colors = RadioButtonDefaults.colors(
+                selectedColor = Color.Red,
+                unselectedColor = Color.Yellow,
+                disabledSelectedColor = Color.Green,
+                disabledUnselectedColor = Color.Blue
+            )
+        )
+
+        Text(text = "Ejemplo")
+    }
 }
 
 @Composable

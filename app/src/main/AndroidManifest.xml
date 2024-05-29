@@ -13,7 +13,7 @@
         android:theme="@style/Theme.JetpackComposeCatalogo"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".SelectionControlComponentExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.JetpackComposeCatalogo">
             <intent-filter>

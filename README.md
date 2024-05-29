@@ -37,19 +37,19 @@ Estados<br>
 -remember -> debido al recomposicion de vistas es necesario para no perder valores de las variables<br>
 -.value -> para acceder al valor de la variable para leer o escribirla.<br>
 -Ejemplo -> val counter = remember { mutableStateOf(0) } // counter.value += 1 // aunque no nos guarda si se rota pantalla por el ciclo de vida<br>
--rememberSaveable -> mantiene el estado aunque la vista se destruya.
--by -> para evitar usar .value //var counter by rememberSaveable { mutableStateOf(0) } // counter += 1
+-rememberSaveable -> mantiene el estado aunque la vista se destruya.<br>
+-by -> para evitar usar .value //var counter by rememberSaveable { mutableStateOf(0) } // counter += 1<br>
 
 Text, TextField y OutlinedTextField<br>
 
 State Hoisting<br>
--Elevar el estado al principal común más bajo entre todos lo elementos componibles.
+-Elevar el estado al principal común más bajo entre todos lo elementos componibles.<br>
 
 Button y OutlinedButton<br>
 
 Image y Icon<br>
-implementation "androidx.compose.material:material-icons-extended:$compose_version"
-https://fonts.google.com/icons
+implementation "androidx.compose.material:material-icons-extended:$compose_version"<br>
+https://fonts.google.com/icons<br>
 
 ProgressBar<br>
 
