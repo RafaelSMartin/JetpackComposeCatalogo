@@ -30,16 +30,10 @@ class SliderComponentActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun MySlider() {
-    BasicSlider()
-}
-
-
 @Preview(showBackground = true)
 @Composable
 fun DefaultSliderComponentsPreview() {
     JetpackComposeCatalogoTheme {
-
+        BasicSlider()
     }
 }

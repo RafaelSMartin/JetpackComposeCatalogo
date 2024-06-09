@@ -58,3 +58,5 @@ Switch, CheckBox, RadioButton<br>
 Cards, Surface, BadgedBox, Divider, DropdownMenu<br>
 
 Slider, RangeSlider<br>
+
+AlertDialog, Dialog, ConfirmationDialog<br>
