@@ -9,7 +9,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Card
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -148,7 +150,16 @@ fun MyConfirmationDialog(
     if (show) {
         Dialog(
             onDismissRequest = { onDismiss() },
-            content = { MyConfirmationDialogContent(onDismiss, onConfirm) }
+            content = {
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp),
+                    shape = RoundedCornerShape(16.dp),
+                ) {
+                    MyConfirmationDialogContent(onDismiss, onConfirm)
+                }
+            }
         )
     }
 }
